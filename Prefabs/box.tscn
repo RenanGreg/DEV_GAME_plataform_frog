@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://vplfonvcjvbi"]
+
+[ext_resource type="Texture2D" uid="uid://c5g7s56ork4ta" path="res://Sprites/Sprites/Items/Boxes/Box1/Idle.png" id="1_bfbvn"]
+[ext_resource type="Script" path="res://Scripts/box.gd" id="1_d3lr4"]
+[ext_resource type="Texture2D" uid="uid://c6op4kf4b4us7" path="res://Sprites/Sprites/Items/Boxes/Box1/Hit (28x24).png" id="2_pdelo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdmx0"]
+atlas = ExtResource("2_pdelo")
+region = Rect2(0, 0, 28, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn1br"]
+atlas = ExtResource("2_pdelo")
+region = Rect2(28, 0, 28, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kg5c"]
+atlas = ExtResource("2_pdelo")
+region = Rect2(56, 0, 28, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_itco7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bfbvn")
+}],
+"loop": true,
+"name": &" Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdmx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jn1br")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kg5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bfbvn")
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc1pi"]
+
+[node name="Box" type="StaticBody2D" groups=["Box"]]
+position = Vector2(-1, -1)
+script = ExtResource("1_d3lr4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_itco7")
+animation = &" Idle"
+autoplay = " Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_hc1pi")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+lifetime = 1.5
+one_shot = true
+direction = Vector2(0, -1)
+spread = 90.0
+gravity = Vector2(0, 20)
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
+scale_amount_max = 3.0
+color = Color(0.929412, 1, 0, 1)

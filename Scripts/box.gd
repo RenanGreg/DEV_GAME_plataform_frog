@@ -18,6 +18,7 @@ func  Break():
 	
 	$CPUParticles2D.restart() 
 	$AnimatedSprite2D.hide()
+	$CollisionShape2D.queue_free()
 	
 	await get_tree().create_timer(1).timeout 
 	

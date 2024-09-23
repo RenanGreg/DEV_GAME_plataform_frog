@@ -21,7 +21,8 @@ func _physics_process(delta):
 	Move(delta) 
 	Animations()
 	
-	pass 
+	pass  
+	
 	
 	
 func Move(delta): 
@@ -47,7 +48,9 @@ func Move(delta):
 		jump_particle.restart()
 		
 	if is_on_floor(): 
-		jumps = 1
+		jumps = 1 
+		
+		
 	
 	move_and_slide()
 	
@@ -76,7 +79,9 @@ func Animations():
 	elif dir < 0: 
 		animator.flip_h = true 
 	
-	pass
+	pass 
+	
+	
 
 
 

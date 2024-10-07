@@ -91,5 +91,9 @@ func _on_detection_area_body_entered(body):
 		body.Hit() 
 		velocity.y = jump_velocity * 1.5 
 		
+		
+	if body.is_in_group("Slime"):
+		body.Hit()
+		velocity.y = jump_velocity * 1.5
 
 	pass 

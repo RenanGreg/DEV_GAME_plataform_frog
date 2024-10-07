@@ -13,6 +13,13 @@ func _ready():
 	
 func _process(delta): 
 	
-
-	
+	Death()
 	pass 
+
+
+func Death(): 
+	
+	if life <= 0: 
+		get_tree().change_scene_to_file("res://Cenas/menu.tscn") 
+		
+	pass  

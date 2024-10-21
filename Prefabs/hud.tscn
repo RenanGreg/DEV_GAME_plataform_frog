@@ -9,7 +9,7 @@
 script = ExtResource("1_1aet5")
 
 [node name="Life" type="Node2D" parent="."]
-position = Vector2(33, 12)
+position = Vector2(15, 24)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Life"]
@@ -34,7 +34,7 @@ text = "3
 "
 
 [node name="Score" type="Node2D" parent="."]
-position = Vector2(44, 38)
+position = Vector2(25, 48)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Score"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://rpxh26q7k8sg"]
+[gd_scene load_steps=23 format=3 uid="uid://rpxh26q7k8sg"]
 
 [ext_resource type="Script" path="res://Scripts/slime.gd" id="1_iawgc"]
 [ext_resource type="Texture2D" uid="uid://bwiuekdo7lb8f" path="res://Sprites/Slime/Hit (44x30).png" id="2_adxy2"]
@@ -122,23 +122,46 @@ animations = [{
 "speed": 17.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jo8q2"]
-radius = 14.0357
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a7t7g"]
+radius = 12.0
+height = 26.0
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_7wakt"]
+length = 15.9941
+slide_on_slope = true
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_huah4"]
+length = 16.0291
 
 [node name="Slime" type="CharacterBody2D" groups=["Slime"]]
 script = ExtResource("1_iawgc")
 range = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.8147e-06, -1.0625)
+scale = Vector2(0.840909, 1.00417)
 sprite_frames = SubResource("SpriteFrames_qp0ew")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.492218
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_jo8q2")
+shape = SubResource("CapsuleShape2D_a7t7g")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 4)
+rotation = -1.54364
+shape = SubResource("SeparationRayShape2D_7wakt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 4)
+rotation = 1.52466
+shape = SubResource("SeparationRayShape2D_huah4")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

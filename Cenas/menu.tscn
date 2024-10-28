@@ -1,3 +1,30 @@
-[gd_scene format=3 uid="uid://ctdfne81evb6e"]
+[gd_scene load_steps=3 format=3 uid="uid://ctdfne81evb6e"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_l2sld"]
+[ext_resource type="Texture2D" uid="uid://bn07ef6hv6w2s" path="res://Sprites/Sprites/Background/Green.png" id="2_6mj08"]
 
 [node name="Node" type="Node"]
+script = ExtResource("1_l2sld")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 568.0
+offset_bottom = 293.0
+texture = ExtResource("2_6mj08")
+stretch_mode = 1
+
+[node name="continue" type="Button" parent="."]
+offset_left = 158.0
+offset_top = 116.0
+offset_right = 274.0
+offset_bottom = 168.0
+text = "CONTINUE"
+
+[node name="Play" type="Button" parent="."]
+offset_left = 151.0
+offset_top = 34.0
+offset_right = 280.0
+offset_bottom = 93.0
+text = "PLAY"
+
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

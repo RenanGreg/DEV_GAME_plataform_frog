@@ -9,6 +9,7 @@ Um jogo de plataforma divertido e desafiador onde o jogador assume o controle de
 🎯 Inimigos e Obstáculos Dinâmicos para aumentar o desafio.
 
 Como Jogar:
+
 Acesse o jogo aqui -> https://renangreg.itch.io/plataform-frog 
 
 Use as teclas W-A-S-D ou as setas do teclado para mover o sapo.

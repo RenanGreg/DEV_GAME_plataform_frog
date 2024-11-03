@@ -1,4 +1,4 @@
-<h1 align="center"> Plataform Frog </h1>
+<h1 align="center"> Plataform Frog🐸 </h1>
 
 Um jogo de plataforma divertido e desafiador onde o jogador assume o controle de um sapo corajoso que precisa superar obstáculos e inimigos para alcançar o final de cada fase. Inspirado nos clássicos de plataforma, o jogo traz uma jogabilidade leve e viciante para todas as idades. 
 
